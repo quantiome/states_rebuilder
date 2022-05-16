@@ -255,7 +255,7 @@ class StateBuilderState<T> extends State<StateBuilder<T>> {
           ? () {
               widget.initState!.call(context, rm);
               if (widget.afterInitialBuild != null) {
-                WidgetsBinding.instance?.addPostFrameCallback(
+                WidgetsBinding.instance.addPostFrameCallback(
                   (_) => widget.afterInitialBuild!(context, rm),
                 );
               }
@@ -268,7 +268,7 @@ class StateBuilderState<T> extends State<StateBuilder<T>> {
         () {
           widget.onSetState?.call(context, rm);
           if (widget.onRebuildState != null) {
-            WidgetsBinding.instance?.addPostFrameCallback(
+            WidgetsBinding.instance.addPostFrameCallback(
               (_) => widget.onRebuildState!(context, rm),
             );
           }

@@ -114,7 +114,7 @@ class InjectedThemeImp<KEY> extends InjectedImp<KEY> with InjectedTheme<KEY> {
       //for the next frame.
       subscribeToRM(
         (_) {
-          WidgetsBinding.instance?.addPostFrameCallback(
+          WidgetsBinding.instance.addPostFrameCallback(
             (_) => onSetState.call(snapState),
           );
         },

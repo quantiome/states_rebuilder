@@ -294,7 +294,7 @@ class EvaluateAnimation {
     if (!onAnimation._isSchedulerBinding) {
       onAnimation._isSchedulerBinding = true;
 
-      SchedulerBinding.instance!.addPostFrameCallback(
+      SchedulerBinding.instance.addPostFrameCallback(
         (_) {
           onAnimation
             .._isSchedulerBinding = false

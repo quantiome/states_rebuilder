@@ -71,7 +71,7 @@ abstract class InjectedTextEditing implements InjectedBaseState<String> {
 
     _focusNode ??= FocusNode();
     //To cache the auto focused TextField
-    SchedulerBinding.instance!.endOfFrame.then((_) {
+    SchedulerBinding.instance.endOfFrame.then((_) {
       final form = (this as InjectedTextEditingImp).form as InjectedFormImp?;
       if (form != null) {
         if (_focusNode?.hasFocus == true) {
@@ -144,7 +144,7 @@ class InjectedTextEditingImp extends InjectedBaseBaseImp<String>
         if (form!.autovalidateMode == AutovalidateMode.always) {
           //When initialized and always auto validated, then validate in the next
           //frame
-          WidgetsBinding.instance!.addPostFrameCallback(
+          WidgetsBinding.instance.addPostFrameCallback(
             (timeStamp) {
               form!.validate();
             },
@@ -250,7 +250,7 @@ class InjectedTextEditingImp extends InjectedBaseBaseImp<String>
     _removeFromInjectedList?.call();
     _controller?.dispose();
     _controller = null;
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       //Dispose after the associated TextField remove its listeners to _focusNode
       _focusNode?.dispose();
       _focusNode = null;

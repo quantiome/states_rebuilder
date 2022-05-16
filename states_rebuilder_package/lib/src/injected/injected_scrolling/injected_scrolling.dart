@@ -189,7 +189,7 @@ class InjectedScrollingImp extends InjectedBaseBaseImp<double>
           !position.outOfRange) {
         hasReachedMinExtent = false;
         hasReachedMaxExtent = true;
-        SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+        SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
           if (_maxScrollExtent != position.maxScrollExtent) {
             _maxScrollExtent = position.maxScrollExtent;
             if (_controller == null) {

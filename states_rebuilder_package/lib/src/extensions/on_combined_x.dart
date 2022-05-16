@@ -80,7 +80,7 @@ extension OnCombinedX on OnCombined<dynamic, Widget> {
                   onSetState?._call(_combinedSnap!, _combinedSnap!.data);
 
                   if (onAfterBuild != null) {
-                    WidgetsBinding.instance?.addPostFrameCallback(
+                    WidgetsBinding.instance.addPostFrameCallback(
                       (_) => onAfterBuild._call(
                           _combinedSnap!, _combinedSnap!.data),
                     );
@@ -116,7 +116,7 @@ extension OnCombinedX on OnCombined<dynamic, Widget> {
             _combinedSnap = _getCombinedSnap(widget.injects, snapFormType);
 
             if (onAfterBuild != null) {
-              WidgetsBinding.instance?.addPostFrameCallback(
+              WidgetsBinding.instance.addPostFrameCallback(
                 (_) => onAfterBuild._call(_combinedSnap!, _combinedSnap!.data),
               );
             }

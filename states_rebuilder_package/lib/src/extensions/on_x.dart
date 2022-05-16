@@ -84,7 +84,7 @@ extension OnX on On<Widget> {
                   return;
                 }
                 onSetState?.call(injected.snapState);
-                WidgetsBinding.instance!.addPostFrameCallback((_) {
+                WidgetsBinding.instance.addPostFrameCallback((_) {
                   onAfterBuild?.call(injected.snapState);
                 });
                 setState();
@@ -110,7 +110,7 @@ extension OnX on On<Widget> {
               return true;
             }());
             initState?.call();
-            WidgetsBinding.instance!.addPostFrameCallback((_) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
               onAfterBuild?.call(inj.snapState);
             });
           },

@@ -117,7 +117,7 @@ class InjectedI18NImp<I18N> extends InjectedImp<I18N> with InjectedI18N<I18N> {
       //for the next frame.
       subscribeToRM(
         (_) {
-          WidgetsBinding.instance?.addPostFrameCallback(
+          WidgetsBinding.instance.addPostFrameCallback(
             (_) => onSetState.call(snapState),
           );
         },
@@ -191,7 +191,7 @@ class InjectedI18NImp<I18N> extends InjectedImp<I18N> with InjectedI18N<I18N> {
   }
 
   Locale _getSystemLocale() {
-    return WidgetsBinding.instance!.platformDispatcher.locale;
+    return WidgetsBinding.instance.platformDispatcher.locale;
   }
 
   @override

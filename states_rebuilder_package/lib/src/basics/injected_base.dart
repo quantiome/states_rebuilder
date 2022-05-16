@@ -120,7 +120,7 @@ abstract class InjectedBase<T> extends InjectedBaseState<T> {
           return null;
         }
         if (onRebuildState != null && snap != null && snap.hasData) {
-          WidgetsBinding.instance?.addPostFrameCallback(
+          WidgetsBinding.instance.addPostFrameCallback(
             (_) => onRebuildState(),
           );
         }

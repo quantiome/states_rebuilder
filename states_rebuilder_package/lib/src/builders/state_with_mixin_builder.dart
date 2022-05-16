@@ -496,7 +496,7 @@ class _State<T, R> extends State<StateWithMixinBuilder<T, R>> {
             onSetState: On(
               () {
                 if (widget.afterRebuild != null) {
-                  WidgetsBinding.instance?.addPostFrameCallback(
+                  WidgetsBinding.instance.addPostFrameCallback(
                     (_) =>
                         !_isDisposed ? widget.afterRebuild!(context, rm) : null,
                   );
@@ -511,7 +511,7 @@ class _State<T, R> extends State<StateWithMixinBuilder<T, R>> {
 
     widget.initState?.call(context, rm, _mixin);
     if (widget.afterInitialBuild != null) {
-      WidgetsBinding.instance?.addPostFrameCallback(
+      WidgetsBinding.instance.addPostFrameCallback(
         (_) => widget.afterInitialBuild!(context, rm),
       );
     }
@@ -577,12 +577,12 @@ class _StateWithWidgetsBindingObserver<T, R> extends _State<T, R>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
